@@ -3,20 +3,30 @@ This project renders a single Phong-shaded sphere using OpenGL and GLSL. Instead
 
 ### Vertex Shader (shaders/Phong.vert):
 • Applies model, view, projection transforms.
+
 • Computes world-space normals via normalMatrix.
+
 • Outputs FragPos and Normal to the fragment shader.
 
 ### Fragment Shader (shaders/Phong.frag):
 • Receives interpolated FragPos and Normal.
+
 • Computes ambient, diffuse, and Blinn-Phong specular lighting using uniforms (lightPos, viewPos, material and light colors, shininess).
+
 • Applies gamma correction (γ = 2.2)
 
 ### Host Program (src/main_Phong_Shader.cpp):
+
 • Initializes GLFW/GLEW, creates an 800×800 window.
+
 • Loads and links the two shaders.
+
 • Builds a unit-sphere mesh (32×16 tesselation, identical to HW5).
+
 • Uploads positions and normals to VBOs and indices to an EBO under one VAO.
+
 • In each frame, sets model (scale 2, translate z = –7), view (identity), and projection (60° FOV, aspect 1:1).
+
 • Computes normalMatrix and sends all Phong parameters exactly as in HW6
 
 # Result
@@ -29,8 +39,11 @@ When running, an 800×800 OpenGL window opens showing the green sphere with smoo
 
 ### Requirements
 Visual Studio 2022 (or newer) on Windows
+
 GLEW (headers + glew32.lib, glew32.dll)
+
 GLFW (headers + glfw3.lib, glfw3.dll)
+
 GLM (headers only)
 
 ### Build Steps
