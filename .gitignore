@@ -1,0 +1,13 @@
+# Visual Studio 관련 로컬 캐시/설정 폴더 무시
+.vs/
+
+# 사용자별 설정 파일 무시
+*.suo
+*.user
+*.vcxproj.user
+*.VC.db
+
+# 빌드 아웃풋 폴더 무시
+Debug/
+Release/
+x64/
